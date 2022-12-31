@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2D97EE7C296097720092F681 /* Chromaton Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2D97EE7B296097720092F681 /* Chromaton Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		2D97EE81296097720092F681 /* ChromatonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE80296097720092F681 /* ChromatonApp.swift */; };
-		2D97EE83296097720092F681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE82296097720092F681 /* ContentView.swift */; };
 		2D97EE85296097720092F681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D97EE84296097720092F681 /* Assets.xcassets */; };
 		2D97EE88296097720092F681 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D97EE87296097720092F681 /* Preview Assets.xcassets */; };
+		2D97EE97296098860092F681 /* ChromatonSim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE92296098860092F681 /* ChromatonSim.swift */; };
+		2D97EE98296098860092F681 /* ChromatonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE93296098860092F681 /* ChromatonApp.swift */; };
+		2D97EE99296098860092F681 /* ChromatonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE94296098860092F681 /* ChromatonScene.swift */; };
+		2D97EE9A296098860092F681 /* ChromatonExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE95296098860092F681 /* ChromatonExtensionDelegate.swift */; };
+		2D97EE9B296098860092F681 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D97EE96296098860092F681 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +44,13 @@
 /* Begin PBXFileReference section */
 		2D97EE75296097720092F681 /* Chromaton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chromaton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D97EE7B296097720092F681 /* Chromaton Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chromaton Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D97EE80296097720092F681 /* ChromatonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromatonApp.swift; sourceTree = "<group>"; };
-		2D97EE82296097720092F681 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D97EE84296097720092F681 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D97EE87296097720092F681 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		2D97EE92296098860092F681 /* ChromatonSim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromatonSim.swift; sourceTree = "<group>"; };
+		2D97EE93296098860092F681 /* ChromatonApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromatonApp.swift; sourceTree = "<group>"; };
+		2D97EE94296098860092F681 /* ChromatonScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromatonScene.swift; sourceTree = "<group>"; };
+		2D97EE95296098860092F681 /* ChromatonExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChromatonExtensionDelegate.swift; sourceTree = "<group>"; };
+		2D97EE96296098860092F681 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +84,11 @@
 		2D97EE7F296097720092F681 /* Chromaton Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				2D97EE80296097720092F681 /* ChromatonApp.swift */,
-				2D97EE82296097720092F681 /* ContentView.swift */,
+				2D97EE93296098860092F681 /* ChromatonApp.swift */,
+				2D97EE95296098860092F681 /* ChromatonExtensionDelegate.swift */,
+				2D97EE94296098860092F681 /* ChromatonScene.swift */,
+				2D97EE92296098860092F681 /* ChromatonSim.swift */,
+				2D97EE96296098860092F681 /* ContentView.swift */,
 				2D97EE84296097720092F681 /* Assets.xcassets */,
 				2D97EE86296097720092F681 /* Preview Content */,
 			);
@@ -146,6 +155,7 @@
 					};
 					2D97EE7A296097720092F681 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -192,8 +202,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D97EE83296097720092F681 /* ContentView.swift in Sources */,
-				2D97EE81296097720092F681 /* ChromatonApp.swift in Sources */,
+				2D97EE9A296098860092F681 /* ChromatonExtensionDelegate.swift in Sources */,
+				2D97EE9B296098860092F681 /* ContentView.swift in Sources */,
+				2D97EE97296098860092F681 /* ChromatonSim.swift in Sources */,
+				2D97EE98296098860092F681 /* ChromatonApp.swift in Sources */,
+				2D97EE99296098860092F681 /* ChromatonScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +335,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chromaton Watch App/Preview Content\"";
@@ -341,6 +355,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 9.1;
@@ -352,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Chromaton Watch App/Preview Content\"";
