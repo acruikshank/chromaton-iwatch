@@ -10,14 +10,14 @@ import SpriteKit
 
 struct ContentView: View {
   @EnvironmentObject var extensionDelegate: ChromatonExtensionDelegate
+  @State private var targetPeriod = 4.0
 
   var scene: ChromatonScene {
     let device = WKInterfaceDevice.current()
     let devicePixels = device.screenBounds.size
-    // CGSize(width: 410, height: 502)
     let size = CGSize(width: devicePixels.width * device.screenScale, height: devicePixels.height * device.screenScale)
     print(WKInterfaceDevice.current())
-    let scene = ChromatonScene(size: size)
+    let scene = ChromatonScene(size: size, targetPeriod: $targetPeriod)
     scene.size = size
     scene.scaleMode = .fill
     
@@ -32,6 +32,14 @@ struct ContentView: View {
     SpriteView(scene: cScene)
       .edgesIgnoringSafeArea(.all)
       .gesture(TapGesture().onEnded{ _ in cScene.newTarget() })
+      .focusable()
+      .digitalCrownRotation($targetPeriod,
+                            from: 0.5,
+                            through: 20.0,
+                            by: 0.02,
+                            sensitivity: .high,
+                            isContinuous: false,
+                            isHapticFeedbackEnabled: true)
   }
 }
 

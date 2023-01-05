@@ -10,7 +10,6 @@ import SwiftUI
 @main
 struct Chromaton_Watch_AppApp: App {
   @WKExtensionDelegateAdaptor var extensionDelegate: ChromatonExtensionDelegate
-  
   var body: some Scene {
     WindowGroup {
       ContentView()

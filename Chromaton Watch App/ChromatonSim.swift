@@ -153,10 +153,6 @@ struct ChromatonSim {
     var sequenceIndex: Int = 0    // which direction to begin mate search
     var minDeviance: Int = 1<<30
     
-    if Int.random(in: 0 ..< TARGET_CHANGE_PERIOD) == 0 {
-      newTarget()
-    }
-
     // perform a semi-random traversal of population
     subIndex = Int.random(in: 0 ..< numChromotons)
     for _ in 0 ..< numChromotons {

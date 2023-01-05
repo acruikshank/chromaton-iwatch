@@ -7,6 +7,7 @@
 
 import WatchKit
 import SpriteKit
+import SwiftUI
 import UIKit
 
 let boxWidth = 14
@@ -27,11 +28,14 @@ class ChromatonScene: SKScene {
   var rects: [SKSpriteNode] = []
   var sim: ChromatonSim
   var lastUpate: TimeInterval = 0
+  var lastTargetUpdate: TimeInterval = 0
+  var targetPeriod: Binding<Double>
   
-  override init(size aSize: CGSize) {
+  init(size aSize: CGSize, targetPeriod: Binding<Double>) {
     let size = CGSize(width: boxWidth, height: boxHeight)
     let columns = Int(ceil((aSize.width-CGFloat(boxGap))/CGFloat(boxWidth + boxGap)))
     let rows = Int(ceil((aSize.height-CGFloat(boxGap))/CGFloat(boxHeight + boxGap)))
+    self.targetPeriod = targetPeriod
     
     sim = ChromatonSim(xChromotons: columns, yChromotons: rows)
     
@@ -51,6 +55,7 @@ class ChromatonScene: SKScene {
   
   required init?(coder aDecoder: NSCoder) {
     sim = ChromatonSim(xChromotons: 0, yChromotons: 0)
+    targetPeriod = Binding(get: { () in 10.0 }, set: { v in } )
     super.init(coder: aDecoder)
   }
   
@@ -63,6 +68,11 @@ class ChromatonScene: SKScene {
       }
       
       lastUpate = currentTime
+    }
+    
+    if currentTime - lastTargetUpdate >= targetPeriod.wrappedValue {
+      newTarget()
+      lastTargetUpdate = currentTime
     }
   }
   
